@@ -21,6 +21,18 @@ button {
 }
 #display-box {
   width: 1000px;
-  min-height: 20px;
+  min-height: 200px;
   border: 2px solid black;
+}
+#display-box div {
+  display: flex;
+  justify-content: space-between;
+}
+#act-area {
+  width: 500px;
+  min-height: 200px;
+  border: 2px solid black;
+  position: absolute;
+  left: 1050px;
+  top: 219px;
 }

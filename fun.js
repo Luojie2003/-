@@ -47,3 +47,13 @@ function reset_clicked(){
     btn.addEventListener('click',resetPage);
 }
 reset_clicked();
+
+function search(){
+    
+}
+
+function search_clicked(){
+    let btn = document.querySelector('#search');
+    btn.addEventListener('click',search);
+}
+search_clicked();
