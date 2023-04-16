@@ -12,11 +12,13 @@ function search_clicked(){
             // console.log(index, cur);
             if (keyid == cur.idv){
                 // console.log("yesOK");
-                ans_arr.push(index);
+                // ans_arr.push(index);
+                addDisplay2Item(data[index]);
             }
         },0)
-        console.log("ans_arr: ");
-        console.log(ans_arr);
+        // console.log("ans_arr: ");
+        // console.log(ans_arr);
+        addDisplay2Item(ans_arr);
     }
     
 }

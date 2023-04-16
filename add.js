@@ -5,6 +5,11 @@ function displayAdd(nm_,age_,id_,sex_){
     // del_btn.value = '删除';
     del_btn.textContent = "删除";
     del_btn.className = "del_btn";
+    del_btn.addEventListener('click',function(ad){
+        console.log(this);
+        let prt = this.parentElement;
+        console.log(prt);
+    });
     ad.appendChild(del_btn);
     display.appendChild(ad);
 }
