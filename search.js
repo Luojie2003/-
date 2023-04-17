@@ -1,5 +1,3 @@
-
-
 function search_clicked(){
     let btn = document.querySelector('#search');
     btn.addEventListener('click',search);
@@ -7,6 +5,7 @@ function search_clicked(){
     function search(){
         var keyid = prompt();
         console.log(keyid);
+        /**遍历arr得到符合条件的每一项 */
         let ans = data.reduce(function(prev,cur,index,data){
             // console.log(index, cur);
             if (keyid == cur.idv){
@@ -15,9 +14,6 @@ function search_clicked(){
                 addDisplay2Item(data[index]);
             }
         },0)
-        // console.log("ans_arr: ");
-        addDisplay2Item(ans_arr);
     }
-    
 }
 search_clicked();
