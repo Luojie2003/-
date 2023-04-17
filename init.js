@@ -10,7 +10,6 @@ function clearDisplay2(){
 }
 function addDisplay2Item(e){
     let ad = document.createElement('div');
-    let true_sex = 
     ad.innerText = '名字：' + e.nmv + 'ID:  '  + e.idv + '年龄:  ' + e.agev + '性别:  ' + e.sexv; 
     display2.appendChild(ad);
 }
