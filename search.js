@@ -1,19 +1,36 @@
 function search_clicked(){
     let btn = document.querySelector('#search');
-    btn.addEventListener('click',search);
-    let ans_arr = [];
-    function search(){
-        var keyid = prompt();
+    btn.addEventListener('click',function search(){
+        let keyid = prompt();
         console.log(keyid);
-        /**遍历arr得到符合条件的每一项 */
-        let ans = data.reduce(function(prev,cur,index,data){
-            // console.log(index, cur);
-            if (keyid == cur.idv){
-                // console.log("yesOK");
-                // ans_arr.push(index);
-                addDisplay2Item(data[index]);
-            }
-        },0)
-    }
+        searchById(keyid);
+    });
+}
+/** 遍历arr得到符合条件的项 */
+function searchById(searchId){
+    let ans = -1;
+    data.reduce((prev,cur,index)=>{
+        if(searchId == cur.idv){
+            console.log("yesOK");
+            // console.log(index);
+            ans = index;
+            // return index;
+        }
+    },0);
+    console.log(ans);
+    return ans;
+}
+function searchByName(searchName){
+    let ans = -1;
+    data.reduce((prev,cur,index)=>{
+        if(searchName == cur.nmv){
+            console.log("yesOK");
+            // console.log(index);
+            ans = index;
+            // return index;
+        }
+    },0);
+    console.log(ans);
+    return ans;
 }
 search_clicked();

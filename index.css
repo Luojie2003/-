@@ -11,6 +11,13 @@ button {
   margin: 0 10px;
   padding: 3px;
 }
+#page {
+  margin: 20px auto;
+  width: 800px;
+  height: 1000px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
 #page #act-box {
   width: 100%;
   display: flex;
@@ -20,9 +27,11 @@ button {
   display: flex;
 }
 #display-box {
-  width: 1000px;
+  position: relative;
   min-height: 200px;
   border: 2px solid black;
+  border-radius: 5px;
+  margin: 50px;
 }
 #display-box div {
   display: flex;
@@ -33,6 +42,6 @@ button {
   min-height: 200px;
   border: 2px solid black;
   position: absolute;
-  left: 1050px;
+  left: 750px;
   top: 219px;
 }

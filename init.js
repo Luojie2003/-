@@ -6,6 +6,23 @@ let age = document.querySelector('#input-age');
 let sex = document.querySelector('#select_sex');
 var data = [];
 var IDNUM = 0;
+class User {
+    constructor(idv, nmv, agev, sexv) {
+        this.idv = idv;
+        this.nmv = nmv;
+        this.agev = agev;
+        this.sexv = sexv;
+    }
+    modifyName(newName) {
+        this.nmv = newName;
+    }
+    modifyAge(newAge){
+        this.agev = newAge;
+    }
+    modifySex(newSex){
+        this.sexv = newSex;
+    }
+}
 function clearDisplay2(){
     display2.innerHTML = '';
 }
@@ -16,5 +33,5 @@ function addDisplay2Item(e){
     display2.appendChild(ad);
 }
 function getId(){
-    return IDNUM++;
+    return ++IDNUM;
 }
