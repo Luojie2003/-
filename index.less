@@ -11,6 +11,14 @@ button {
     margin: 0 5px;
     padding: 3px;
 }
+
+#notice_area{
+    display: flex;
+    justify-content: center;
+    color: red;
+    width: 100%;
+    min-height: 20px;
+}
 #page{
     display: flex;
     flex-direction: column;
@@ -19,11 +27,12 @@ button {
     width: 800px;
     height: 1000px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 1px solid black;
+    box-shadow: 3px 6px 10px 5px #888;
     #act-box {
         width: 100%;
         display: flex;
-        margin: 50px auto;
+        margin: 50px auto 20px;
         #input-items{
             display: flex;
         }
@@ -47,10 +56,12 @@ button {
     height: 100%;
 }
 #act-area {
+    box-shadow: 1px 2px 8px 1px black;
+
     width: 500px;
     min-height: 200px;
     background-color: rgba(128, 128, 128, 1);
-    border: 2px solid white;
+    // border: 2px solid white;
     position: absolute;
     visibility: hidden;
     opacity: 0;
@@ -67,7 +78,7 @@ button {
         background-color: rgba(128, 128, 128, 0.445);
         height: 50px;
         width: 400px;
-        border: 2px black solid;
+        border: 1px black solid;
         border-radius: 10px;
     }
     >div {
@@ -76,6 +87,7 @@ button {
         span{
             background-color: rgba(128, 128, 128, 0.445);
             display:  flex;
+            border-radius: 5px;
             border: 1px black solid;
             align-items: center;
             justify-content: center;

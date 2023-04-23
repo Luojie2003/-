@@ -24,20 +24,53 @@ function displayAdd(nm_,age_,id_,sex_){
     display.appendChild(ad);
 }
 /** 存入一个用户 */
-function submit(){
+function submit(nmv,idv,agev,sexv){
+    // 存入对象数组
+    data.push(new User(idv,nmv,agev,sexv));
+    console.log(data);
+    // 显示面板添加
+    displayAdd(nmv,agev,idv,sexv);
+    notice_dispaly(0);
+}
+function notice_dispaly(v){
+    let notice_area = document.querySelector('#notice_area');
+    // console.log(notice_area);
+    if(v === 1){
+        notice_area.innerHTML = "姓名输入有误";
+    }else if (v === 2){
+        notice_area.innerHTML = "年龄输入有误";
+    }else if(v === 3){
+        notice_area.innerHTML = "年龄、姓名输入有误";
+    }else if(v === 4){
+        notice_area.innerHTML = "您还没有输入";
+    }else {
+        notice_area.innerHTML = "提交成功！";
+    }
+}
+// notice_dispaly(2);
+// notice(1);
+
+/** 存入一个用户_按钮点击事件 */
+function submit_clicked(){
     let nmv = nm.value;
     let idv = getId();
     let agev = age.value;
     let sexv = sex.value;
-    // 存入数组
-    data.push(new User(idv,nmv,agev,sexv));
-    console.log(data);
-    // 展示
-    displayAdd(nmv,agev,idv,sexv);
-}
-/** 存入一个用户_操作 */
-function submit_clicked(){
     let btn = document.querySelector('#add');
-    btn.addEventListener('click',submit);
+    btn.addEventListener('click',()=>{
+        if(nmv===''||agev === ''){
+            notice_dispaly(4);
+        }
+        else if(isLegal(nmv,agev)){
+            submit(nmv,idv,agev,sexv);
+        }else if(!isName(nmv)){
+            notice_dispaly(1);
+        }else if(!isAge(agev)){
+            notice_dispaly(2);
+        }
+    });
+    
+
+
 }
 submit_clicked();

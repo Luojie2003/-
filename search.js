@@ -10,12 +10,19 @@ function search_clicked(){
         /**两个提交按钮 */
         searchbtn1.addEventListener('click', ()=>{
             let keyid = key_input.value;
-            searchById(keyid);
+            if(keyid === ''){
+                return;
+            }
+            let rlt = searchById(keyid);
             console.log(keyid);
         });
         searchbtn2.addEventListener('click',()=>{
             let keynm = key_input.value;
-            searchByName(keynm);
+            if(keynm === ''){
+                return;
+            }
+            let rlt = searchByName(keynm);
+            console.log(rlt);
             console.log(keynm);
         });
     });

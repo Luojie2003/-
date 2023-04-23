@@ -12,3 +12,24 @@ function isAge(age){
 function isLegal(nm,age){
     return isName(nm) && isAge(age);
 }
+
+/**失去焦点后，判断name和age的合法性 */
+nm.addEventListener('focusout',()=>{
+    let agev = age.value;
+    let nmv = nm.value;
+    if(!isName(nmv) && !isAge(agev)){
+        notice_dispaly(3);
+    }else if(!isName(nmv)){
+        notice_dispaly(1);
+    }
+});
+/**失去焦点后，判断name和age的合法性 */
+age.addEventListener('focusout',()=>{
+    let nmv = nm.value;
+    let agev = age.value;
+    if(!isName(nmv) && !isAge(agev)){
+        notice_dispaly(3);
+    }else if(!isAge(agev)){
+        notice_dispaly(2);
+    }
+});
