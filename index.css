@@ -50,8 +50,9 @@ button {
   background-color: #808080;
   border: 2px solid white;
   position: absolute;
-  opacity: 1;
-  transition: opacity 0.1s linear;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s linear;
   top: 219px;
   display: flex;
   flex-direction: column;

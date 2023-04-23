@@ -1,9 +1,23 @@
 function search_clicked(){
     let btn = document.querySelector('#search');
     btn.addEventListener('click',function search(){
-        let keyid = prompt();
-        console.log(keyid);
-        searchById(keyid);
+        display2.style.visibility = 'visible';
+        display2.style.opacity = 1;
+        
+        let key_input = document.querySelector('#search_box');
+        let searchbtn1 = document.querySelector('.search_by_id');
+        let searchbtn2 = document.querySelector('.search_by_nm');
+        /**两个提交按钮 */
+        searchbtn1.addEventListener('click', ()=>{
+            let keyid = key_input.value;
+            searchById(keyid);
+            console.log(keyid);
+        });
+        searchbtn2.addEventListener('click',()=>{
+            let keynm = key_input.value;
+            searchByName(keynm);
+            console.log(keynm);
+        });
     });
 }
 search_clicked();

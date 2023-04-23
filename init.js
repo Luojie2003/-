@@ -35,12 +35,13 @@ function addDisplay2Item(e){
 function getId(){
     return ++IDNUM;
 }
-let act_area = document.querySelector('#act-area');
 let body = document.querySelector('body');
 
 document.addEventListener('click',(e)=>{
     if(e.target === body){
         display2.style.opacity=0;
+        display2.style.visibility = 'hidden';
+
     }
 })
 
