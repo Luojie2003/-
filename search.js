@@ -14,6 +14,7 @@ function search_clicked(){
                 return;
             }
             let rlt = searchById(keyid);
+            addDisplay2Item(rlt);
             console.log(keyid);
         });
         searchbtn2.addEventListener('click',()=>{

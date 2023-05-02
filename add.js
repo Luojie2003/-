@@ -46,31 +46,33 @@ function notice_dispaly(v){
     }else {
         notice_area.innerHTML = "提交成功！";
     }
+    setTimeout(() => {
+        notice_area.innerHTML = '';
+    }, 2000);
 }
 // notice_dispaly(2);
 // notice(1);
 
 /** 存入一个用户_按钮点击事件 */
 function submit_clicked(){
-    let nmv = nm.value;
-    let idv = getId();
-    let agev = age.value;
-    let sexv = sex.value;
     let btn = document.querySelector('#add');
     btn.addEventListener('click',()=>{
-        if(nmv===''||agev === ''){
+        let nmv = nm.value;
+        let idv = getId();
+        let agev = age.value;
+        let sexv = sex.value;
+        console.log(nmv);
+        console.log(agev);
+        if(nmv === '' && agev === ''){
             notice_dispaly(4);
-        }
-        else if(isLegal(nmv,agev)){
+        }else if(isLegal(nmv,agev)){
             submit(nmv,idv,agev,sexv);
+            notice_dispaly(0);
         }else if(!isName(nmv)){
             notice_dispaly(1);
         }else if(!isAge(agev)){
             notice_dispaly(2);
         }
     });
-    
-
-
 }
 submit_clicked();
